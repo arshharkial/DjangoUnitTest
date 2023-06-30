@@ -18,7 +18,7 @@ services:
             python manage.py runserver 0.0.0.0:8000"
     environment:
       - DB_HOST=db
-      - DB_NAME=postgres
+      - DB_NAME=postgres    # Changed to postgres because db app was not being created
       - DB_USER=postgres
       - DB_PASS=supersecretpassword
     depends_on:

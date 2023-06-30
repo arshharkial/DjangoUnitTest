@@ -4,6 +4,10 @@ from django.contrib.auth import get_user_model
 from rest_framework.test import APIClient
 from rest_framework import status
 
+TOKEN_URL: str = "api/user/token/"
+ME_URL: str = "api/user/create/"
+CREATE_USER_URL: str = "api/user/create/"
+
 
 class PublicUserApiTests(TestCase):
     """Test the users API (public)"""
@@ -68,7 +72,6 @@ class PrivateUserApiTests(TestCase):
 
 
 class CreateToken(TestCase):
-
     def test_create_token_for_user(self):
         """Test that a token is created for the user"""
         payload = {"email": "test@londonappdev.com", "password": "testpass"}

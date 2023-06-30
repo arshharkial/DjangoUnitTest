@@ -71,9 +71,9 @@ class PrivateIngredientsAPITests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
 
 
-def test_recipe_str(self):
-    """Test the recipe string representation"""
-    recipe = models.Recipe.objects.created(
-        user=sample_user(), title="steak and mushroom sauce", time_minutes=5, price=5.00
-    )
-    self.assertEqual(str(recipe), recipe.title)
+    def test_recipe_str(self):
+        """Test the recipe string representation"""
+        recipe = models.Recipe.objects.created(
+            user=sample_user(), title="steak and mushroom sauce", time_minutes=5, price=5.00
+        )
+        self.assertEqual(str(recipe), recipe.title)
